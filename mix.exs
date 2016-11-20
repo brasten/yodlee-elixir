@@ -17,7 +17,7 @@ defmodule Yodlee.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :hackney]]
   end
 
   defp elixirc_paths(:test), do: ["lib", "test/support"]

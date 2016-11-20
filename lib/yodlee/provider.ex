@@ -1,6 +1,12 @@
 defmodule Yodlee.Provider do
 
-  def search(creds, name, cobrand_name \\ Yodlee.default_cobrand_name) do
+  def all(creds, pagination \\ [], cobrand_name \\ Yodlee.default_cobrand_name) do
+    Yodlee.make_authenticated_request(creds, "get", "#{cobrand_name}/v1/providers", Enum.into(pagination, %{}))
+  end
+
+  def search(creds, name, cobrand_name \\ Yodlee.default_cobrand_name)
+    when is_binary(name) do
+
     Yodlee.make_authenticated_request(creds, "get", "#{cobrand_name}/v1/providers", %{"name" => name})
   end
 
