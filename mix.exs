@@ -34,7 +34,7 @@ defmodule Yodlee.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:httpoison, "~> 0.9.0" },
-      {:hackney, "~> 1.4.8" }, # not included in hex version of httpoison :(
+      {:hackney, "~> 1.6.0" }, # not included in hex version of httpoison :(
       {:poison, "~> 2.0"},
       {:ex_doc, "~> 0.7", only: :dev},
       {:mock, "~> 0.1.1", only: :test}]
